@@ -1,9 +1,12 @@
-$background-color:  #e7eaf6;
-$text-color: #38598b;
-$button-color: #113f67;
-$button-color2: #a2a8d3;
-
+@import './styles/colors';
+@import './layout/header';
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@import './layout/home';
+@import './layout/about';
+
+html {
+  height: 100vh;
+}
 
 
 .App {
@@ -11,15 +14,17 @@ $button-color2: #a2a8d3;
   font-family: 'Poppins', sans-serif;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   flex-direction: column;
   height: 100vh;
+  gap: 300px;
 
   &-input-container {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    width: 90vw;
 
     &__title {
       color: $text-color;
@@ -62,6 +67,10 @@ $button-color2: #a2a8d3;
         justify-content: center;
         flex-direction: column;
 
+        &__item {
+          color: $text-color;
+        }
+
         ul {
           padding: 0;
           list-style: none;
@@ -69,6 +78,7 @@ $button-color2: #a2a8d3;
           align-items: center;
           justify-content: center;
           flex-direction: column;
+
           li {
             margin-top: 20px;
             margin-bottom: 10px;
@@ -87,21 +97,30 @@ $button-color2: #a2a8d3;
           flex-direction: row;
           gap: 10px;
 
-          &-delete, &-clear {
+          &-delete {
+            padding: 10px 30px;
+            background-color: $delete-button;
+            font-family: 'Poppins', sans-serif;
+            border: none;
+            color: $text-color;
+            border-radius: 10px;
+          }
+
+          &-clear {
             padding: 10px 30px;
             background-color: $button-color;
             font-family: 'Poppins', sans-serif;
             border: none;
-            color: $background-color;
+            color: $text-color;
             border-radius: 10px;
           }
 
           &-completed {
             padding: 10px 30px;
-            background-color: $button-color2;
+            background-color: $complered-button;
             font-family: 'Poppins', sans-serif;
             border: none;
-            color: $background-color;
+            color: $text-color;
             border-radius: 10px;
           }
 

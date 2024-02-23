@@ -1,18 +1,18 @@
-# React Todo App
+# ToDoChad App
 
-![](https://snipboard.io/SWfA1P.jpg)
+![](https://snipboard.io/69AIOL.jpg)
 
-![](https://snipboard.io/b9e0dF.jpg)
+![](https://snipboard.io/p3g0qr.jpg)
 
 ![](https://snipboard.io/VWEJ3x.jpg)
 
-![](https://snipboard.io/pUubMV.jpg)
+![](https://snipboard.io/LnlIC8.jpg)
 
-![](https://snipboard.io/NFojRG.jpg)
+![](https://snipboard.io/2uSfTe.jpg)
 
 ## Overview
 
-The React Todo App is a simple yet powerful task management application built using React.js and Sass. It provides an intuitive interface to help users organize their tasks efficiently. Whether you're a professional looking to manage your work or a student keeping track of assignments, this app is designed to streamline your daily task management.
+The ToDoChad App is a simple yet powerful task management application built using React.js and Sass. It provides an intuitive interface to help users organize their tasks efficiently. Whether you're a professional looking to manage your work or a student keeping track of assignments, this app is designed to streamline your daily task management.
 
 ## Features
 
@@ -33,14 +33,14 @@ The React Todo App is a simple yet powerful task management application built us
 Copy code
 
 ```
-git clone https://github.com/your-username/react-todo-app.git
+git clone https://github.com/Artur0412-KU/todo-app.git
 
 ```
 
 Install dependencies:
 
 ```
-cd react-todo-app
+cd todo-app
 npm install
 ```
 

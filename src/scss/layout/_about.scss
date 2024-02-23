@@ -1,0 +1,28 @@
+.about-container {
+    width: 90vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    color: $text-color;
+
+    &__img {
+        width: 60%;
+        height: 40%;
+    }
+
+    &__description {
+        h1 {
+            font-size: 16px;
+        }
+        ul {
+            padding: 0;
+            list-style: none;
+        }
+
+        &-link {
+            font-weight: 700;
+            color: $text-color;
+        }
+    }
+}

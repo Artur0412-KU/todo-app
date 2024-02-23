@@ -1,0 +1,25 @@
+.home-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 90vw;
+    gap: 20px;
+
+    &_img {
+        width: 30%;
+        height: 40%;
+    }
+
+    &_description {
+        display: flex;
+        align-items: top;
+        justify-content: space-between;
+        flex-direction: column;
+        color: $text-color;
+
+        a {
+            font-weight: bold;
+        }
+    }
+}

@@ -1,0 +1,32 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    color: $text-color;
+    
+  
+  
+    &-title {
+      font-size: 32px;
+    }
+  
+    &-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      gap: 20px;
+  
+      a {
+        color: $text-color;
+        text-decoration: none;
+  
+        
+      }
+      .active {
+          font-weight: 700;
+      }
+  
+    }
+  }
