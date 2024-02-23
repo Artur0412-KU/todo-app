@@ -4,10 +4,11 @@
     align-items: center;
     justify-content: space-between;
     flex-direction: row;
+    gap: 100px;
     color: $text-color;
 
     &__img {
-        width: 60%;
+        width: 50%;
         height: 40%;
     }
 
