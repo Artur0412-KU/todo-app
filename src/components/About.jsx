@@ -1,6 +1,8 @@
 import React from 'react'
+import {useNavigate} from 'react-router-dom';
 
 export default function About() {
+  const navigate = useNavigate();
   return (
     <div className='about-container'>
       <img className='about-container__img' src='https://www.financebuzz.net/wp-content/uploads/2021/06/Ernest-Khalimov-768x697.png'></img>

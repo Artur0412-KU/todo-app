@@ -2,12 +2,16 @@ import React, { useEffect, useState, useForm } from 'react';
 import ListItem from './ListItem';
 import {Form, Input} from 'antd';
 import ButtonComponent from './Button/ButtonComponent';
+import {useNavigate} from 'react-router-dom';
 import SubmitButton from './Button/SubmitButton';
 
 export default function InputComponent() {
   const [input, setInput] = useState('');
   const [item, setItem] = useState([]);
   const [form] = Form.useForm();
+  const [editItemId, setEditItemId] = useState(null);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     setInput('');
@@ -38,10 +42,25 @@ export default function InputComponent() {
     setItem(updatedItems);
   }
 
+  const handleEdit = (id, newName) => {
+    const updatedItems = item.map(item => {
+      if (item.id === id) {
+        return {...item, name: newName}
+      }
+      return item;
+    })
+    setItem(updatedItems);
+    setEditItemId(null);
+  }
+
   const handleButtonDown = (e) => {
     if (e.key === 'Enter') {
       addNewTodo();
     }
+  }
+
+  const handleEditButtonClick = (id) => {
+     setEditItemId(id);
   }
 
   const clearAllTasks = () => {
@@ -95,19 +114,41 @@ export default function InputComponent() {
 
       <div className='App-input-container__input-bottom'>
         <ul style = {{color: 'white'}}>
-          {item.map((item) => (
+        {item.map(item => (
             <ListItem
               key={item.id}
               id={item.id}
               name={item.name}
               completed={item.completed}
               style={{ color: item.completed ? 'green' : 'black' }}
+              onEdit={handleEdit}
             >
+              {editItemId === item.id ? (
+                <Input
+                  defaultValue={item.name}
+                  onPressEnter={(e) => handleEdit(item.id, e.target.value)}
+                  onBlur={() => setEditItemId(null)} 
+                  autoFocus
+                />
+              ) : (
                 <div className='App-input-container__input-bottom-button-components'>
-                   <ButtonComponent className = 'App-input-container__input-bottom-button-components-delete' text='Delete' onClick={() => handleDelete(item.id)} />
-                  <ButtonComponent className = 'App-input-container__input-bottom-button-components-completed' text='Completed' onClick={() => toggleCompleted(item.id)} /> 
+                  <ButtonComponent
+                    className='App-input-container__input-bottom-button-components-delete'
+                    text='Delete'
+                    onClick={() => handleDelete(item.id)}
+                  />
+                  <ButtonComponent
+                    className='App-input-container__input-bottom-button-components-completed'
+                    text='Completed'
+                    onClick={() => toggleCompleted(item.id)}
+                  />
+                  <ButtonComponent
+                    className='App-input-container__input-bottom-button-components-completed'
+                    text='Edit'
+                    onClick={() => handleEditButtonClick(item.id)}
+                  />
                 </div>
-              
+              )}
             </ListItem>
           ))}
         </ul>
@@ -119,4 +160,3 @@ export default function InputComponent() {
     </div>
   );
 }
-
